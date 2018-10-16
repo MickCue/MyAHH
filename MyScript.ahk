@@ -3,6 +3,11 @@
 ; #Warn
 #SingleInstance Off
 
+; Win+\ Turn Of Screen
+#\::
+SendMessage 0x112, 0xF170, 2, , Program Manager ; Monitor off
+Return
+
 ToggleWinMinimize(TheWindowTitle)
 {
 SetTitleMatchMode,2
@@ -50,10 +55,7 @@ SendInput +{Insert}
 Return
 }
 
-; Win+\ Turn Of Screen
-#\::
-SendMessage 0x112, 0xF170, 2, , Program Manager ; Monitor off
-Return
+
 
 <+!s::ToggleWinMinimize("Sublime")
 <+!v::ToggleWinMinimize("VirtualBox")
